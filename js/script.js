@@ -20,6 +20,7 @@ organizzare i singoli membri in card/schede
 
 BONUS 3:
 Utilizzare gli input presenti nella pagina per permettere all'utente di aggiungere nuovi membri del team: cliccando sul pulsante "add" viene creato un nuovo oggetto, il quale viene inserito nell'array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall'utente.
+
 Consigli del giorno:
 → Ragioniamo come sempre a step.
 → Prima la logica in italiano e poi traduciamo in codice.
@@ -58,4 +59,10 @@ const team = [
       role: 'Graphic Designer',
       image: 'barbara-ramos-graphic-designer.jpg',
     },
-  ];
+];
+
+let userInfo = "";
+for (let i = 0; i < team.length; i++) {
+    userInfo = team[i];
+    console.log(userInfo.name, userInfo.role, userInfo.image);
+}
