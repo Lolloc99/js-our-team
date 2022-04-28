@@ -126,3 +126,7 @@ button {
 
   font-size: 1rem;
 }
+
+#addMemberButton {
+  cursor: pointer;
+}

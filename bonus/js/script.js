@@ -63,7 +63,7 @@ for (let i = 0; i < team.length; i++) {
     /
 
     * appendere il div principale al div con classe "team-container":
-    
+
     */
 
     // Card
@@ -95,4 +95,58 @@ for (let i = 0; i < team.length; i++) {
     teamContainer.append(divTeamCard);
 }
 
+const addBtn = document.getElementById("addMemberButton");
 
+addBtn.addEventListener("click",
+    function () {
+        let addName = document.getElementById("name").value;
+        let addRole = document.getElementById("role").value;
+        let addImage = document.getElementById("image").value;
+
+        const addedObject = {
+            name : addName,
+            role : addRole,
+            image : addImage
+        }
+
+        // Manda il nuovo membro aggiunto nel team
+        team.push(addedObject);
+        console.log(team);
+
+        // Pulisce il team container
+        teamContainer.innerHTML = "";
+
+        // Ripeto il ciclo cosi da includere il nuovo membro
+        for (let i = 0; i < team.length; i++) {
+            userInfo = team[i];
+
+            // Card
+            let divTeamCard = document.createElement("div");
+            divTeamCard.classList.add("team-card");
+        
+            // div dell'immagine nella card
+            let divCardImage = document.createElement("div");
+            divCardImage.classList.add("card-image");
+            divTeamCard.append(divCardImage);
+            // Immagine nella card
+            let cardImage = document.createElement("div");
+            cardImage.innerHTML = `<img src="../img/${userInfo.image}">`;
+            divCardImage.append(cardImage);
+        
+            // div testo della card
+            let divCardText = document.createElement("div");
+            divCardText.classList.add("card-text")
+            divTeamCard.append(divCardText);
+            // testo h3 nella card
+            let cardText = document.createElement("h3");
+            cardText.innerHTML = userInfo.name;
+            divCardText.append(cardText);
+            // test p nella card
+            let cardSubText = document.createElement("p");
+            cardSubText.innerHTML = userInfo.role;
+            divCardText.append(cardSubText);
+        
+            teamContainer.append(divTeamCard);
+        }
+    }
+);
