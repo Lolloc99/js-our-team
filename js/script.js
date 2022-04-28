@@ -67,6 +67,6 @@ for (let i = 0; i < team.length; i++) {
     console.log(userInfo.name, userInfo.role, userInfo.image);
 
     const print = document.getElementById("infoTeam");
-    print.innerHTML += `${"Nome: "} ${userInfo.name} <br> ${"Ruolo: "} ${userInfo.role} <br> ${"Img: "} ${userInfo.image} <br><hr>`;
+    print.innerHTML += `<img src="img/${userInfo.image}"> <br> ${"Nome: "} ${userInfo.name} <br> ${"Ruolo: "} ${userInfo.role} <br><hr>`;
 }
 
