@@ -65,4 +65,8 @@ let userInfo = "";
 for (let i = 0; i < team.length; i++) {
     userInfo = team[i];
     console.log(userInfo.name, userInfo.role, userInfo.image);
+
+    const print = document.getElementById("infoTeam");
+    print.innerHTML += `${"Nome: "} ${userInfo.name} <br> ${"Ruolo: "} ${userInfo.role} <br> ${"Img: "} ${userInfo.image} <br><hr>`;
 }
+
